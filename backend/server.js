@@ -15,7 +15,7 @@ const PORT = 10200;
 const User = require('./models/workers');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(cors({origin:'http://localhost:3001', credentials: true}));
+app.use(cors({origin:'http://localhost:3000', credentials: true}));
 
 //Profile image path make as satatic
 app.use('/profileImage', express.static(path.join(__dirname, 'profileImage')));
@@ -24,7 +24,7 @@ app.use('/profileImage', express.static(path.join(__dirname, 'profileImage')));
 app.use('/gigImage', express.static(path.join(__dirname, 'gigImage')));
 
 
-//mongo Db connecting.............................................
+//mongo Db connecting..................................................................
 mongoose.connect(URL).then(() => {
 //user Login...........................................................................
 app.post('/login',(req, res) => {
@@ -68,7 +68,7 @@ app.get('/profile', (req, res) => {
 });
 })
 
-//session..........................................................
+//session...............................................................................
 const MongoDBStore = require('connect-mongodb-session')(session);
 const store = new MongoDBStore({
     uri: URL,

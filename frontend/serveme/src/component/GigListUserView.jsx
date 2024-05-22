@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from 'react-router-dom';
-import Review from "./Review";
 
-function Gig({profileId}) {
+function GigListUserView({profileId}) {
     const [gigs, setGigs] = useState([]);
     const [error, setError] = useState(null);
     useEffect(() => {
@@ -38,8 +37,7 @@ function Gig({profileId}) {
                         <img style={{width:"230px", height:"192px",paddingRight:"20px",borderRadius:"4px 0px 0px 4px"}} src={`http://localhost:10200/${gig.file}`} alt="gigImage" />
                     </div>
                     <div style={{marginTop:"15px"}}>
-                        <h5>
-                            <Link style={{textDecoration:"none",marginBottom:"20px", color:"black"}} to={`/workers/viewgig/${gig._id}`}>{gig.title}</Link></h5>
+                        <h5><Link style={{textDecoration:"none",marginBottom:"20px", color:"black"}} to={`/workers/viewgigAsUser/${gig._id}`}>{gig.title}</Link></h5>
                         <p style={{marginBottom:"20px",}}>{gig.category} <b>for , </b> {gig.subcategory}</p>
                         <p style={{color:"#67ba6a", marginBottom:"20px",}}><b>Price : {gig.price}</b></p>
                     </div>
@@ -51,4 +49,4 @@ function Gig({profileId}) {
     )
 }
 
-export default Gig
+export default GigListUserView;

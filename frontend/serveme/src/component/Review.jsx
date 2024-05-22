@@ -3,12 +3,13 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import Reviewicon from "../Img/rating.png";
 import Close from "../Img/cancel.png";
+import PropTypes from 'prop-types';
 
 function Review({ profileId }) {
     const [review, setReview] = useState("");
     const [showPopup, setShowPopup] = useState(false);
     const navigate = useNavigate();
-    console.log(profileId)
+    console.log("menna id eka "+profileId)
 
     // Toggle showPopup state
     const togglePopup = () => {
@@ -27,7 +28,7 @@ function Review({ profileId }) {
                 };
                 await axios.post("http://localhost:10200/reviews/add", newReview)
                     .then(() => {
-                        navigate('/workers/profile');
+                        navigate('/profile');
                         alert("Review is added");
                         setReview("");
                     })
@@ -54,13 +55,13 @@ function Review({ profileId }) {
                     <p style={{ backgroundColor: "#f8f9fa", margin: "10px", padding: "15px", borderRadius: "12px" }}>"Incredibly knowledgeable and courteous. The electrician diagnosed the problem quickly and rewired my entire house efficiently and safely. I feel much safer now knowing the work was done by professionals. Thank you, Sparky Solutions!"</p>
                 </div>
                 <div style={{ width: "100%", minHeight: "min-content", borderRadius: "10px", marginBottom: "15px" }}>
-                    <p style={{ backgroundColor: "#f8f9fa", margin: "10px", padding: "15px", borderRadius: "12px" }}>"The electrician arrived at my door within the hour, diagnosed the problem quickly, and had it fixed in no time. Their prices were reasonable, and the service was top-notch. I'll definitely be using them again."</p>
+                    <p style={{ backgroundColor: "#f8f9fa", margin: "10px", padding: "15px", borderRadius: "12px" }}>"in the hour, diagnosed the problem quickly, and had it fixed in no time. Their prices were reasonable, and the service was top-notch. I'll definitely be using them again."</p>
                 </div>
                 <div style={{ width: "100%", minHeight: "min-content", borderRadius: "10px", marginBottom: "15px" }}>
-                    <p style={{ backgroundColor: "#f8f9fa", margin: "10px", padding: "15px", borderRadius: "12px" }}>"The electrician diagnosed the problem quickly and had it fixed in no time."</p>
+                    <p style={{ backgroundColor: "#f8f9fa", margin: "10px", padding: "15px", borderRadius: "12px" }}>"rived at my door within the hour, diagnosed the problem quickly, and had it fixed in no time. Their prices were reasonable, and the service was top-notch. I'll definitely be using them again."</p>
                 </div>
                 <div>
-                    <button onClick={() => setShowPopup(true)} style={{ backgroundColor: "#67ba6a", fontWeight: "bold", border: "#67ba6a", outline: "none", width: "96%", marginLeft: "11px", marginTop: "10px", textAlign: "center", padding: "10px", borderRadius: "4px", color: "white" }}>Add Review</button>
+                    <button onClick={() => setShowPopup(true)} style={{ backgroundColor: "#67ba6a", fontWeight: "bold", border: "#67ba6a", outline: "none", width: "96%", marginLeft: "11px", marginTop: "4px", textAlign: "center",position:"sticky", bottom:"10%", padding: "10px", borderRadius: "4px", color: "white" }}>Add Review</button>
                     {showPopup && (
                         <div style={{ position: "fixed", top: 0, left: 0, width: "100%", height: "100%", backgroundColor: "rgba(0, 0, 0, 0.5)", zIndex: 1000 }}>
                             <form style={{ position: "absolute", top: "50%", left: "50%", width: "40%", transform: "translate(-50%, -50%)", backgroundColor: "#fff", padding: "20px", borderRadius: "4px", boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.3)" }} onSubmit={sendData} encType="multipart/form-data">

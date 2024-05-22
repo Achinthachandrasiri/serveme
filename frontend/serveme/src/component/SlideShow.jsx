@@ -9,12 +9,7 @@ import Mason from '../Img/Brick-Wall-web.jpg';
 import Electrician from '../Img/Electrician-Featured.jpg';
 import Sola from '../Img/solar-panel-contractor-quotes-installation-1024x683.jpg';
 import Camera from '../Img/welder.jpg'
-import Carpenter from '../Img/OIP (1).jpg';
-import Plumber from '../Img/OIP.jpg';
-import Excavator from '../Img/HEO_Pic_1-scaled.jpg';
-import Machanic from '../Img/mechanic.jpg';
 import Hvac from '../Img/hvac.jpg';
-import Point from '../Img/point.png';
 
 function SlideShow() {
     const responsive = {

@@ -52,6 +52,9 @@ const isMobileValid = (mobileNumber) => {
 const isPasswordValid = (password) => {
     return /^(?=.*[a-zA-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/.test(password);
 };
+const isEmailValid = (email) => {
+  return email.includes("@");
+};
 
 //data sending function
   const sendData = async (e) => {
@@ -80,6 +83,10 @@ const isPasswordValid = (password) => {
     if (!isPasswordValid(password)) {
         alert("Password must contain at least one letter, one number, and one symbol and should be at least 8 characters long.");
         return;
+    }
+    if (!isEmailValid(email)) {
+      alert("Email must contain an '@' symbol.");
+      return;
     }
 //sending data without error
     else{

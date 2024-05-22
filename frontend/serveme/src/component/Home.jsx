@@ -92,6 +92,9 @@ function Home(){
         AOS.init({duration:2000});
     },[]);
 
+    useEffect(() => {
+        gigs.forEach(gig => console.log("this is user " + gig.accId));
+    }, [gigs]);
     return(
         <div className="mb-3 container">
             <form onSubmit={(e) => fetchData(e)} style={{marginTop:"20px"}}>
@@ -181,19 +184,19 @@ function Home(){
         </div>
     </form>
 {/*gig results........................................................................................................................*/}
-    <div className="gig-list, mb-3 container" style={{display:"flex",flexWrap: "wrap",gap: "13px",justifyContent: "flexStart" , marginTop:"20px"}}>
-        {gigs.map((gig, index) => (
-        <div data-aos="zoom-in" key={index} className="gig-card"  style={{border: '1px solid #e0e0e0',height:"270px",borderRadius: '8px',padding: '0px',width: 'calc(24% - 5px)',boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',transition: 'transform 0.3s ease-in-out',boxSizing: 'border-box',}}>
-                <div  style={{width:"100%",height:"190px"}}>
-                    <img style={{width:"100%",height:"170px",borderRadius:"8px 8px 0px 0px"}} src={`http://localhost:10200/${gig.file}`} alt="gigImage" />
-                </div>
-                <div style={{margin:"10px"}}>
-                    <h5 style={{textAlign:"center"}}><Link style={{textDecoration:"none", color:"black"}} to={`/workers/checkprofile/${gig.accId}`}>{gig.title}</Link></h5>
-                    <p style={{textAlign:"center",marginBottom:"25px",color:"#67ba6a"}}><b>Price : {gig.price}</b></p>
-                </div>
+<div className="gig-list mb-3 container" style={{ display: "flex", flexWrap: "wrap", gap: "13px", justifyContent: "flexStart", marginTop: "20px" }}>
+                {gigs.map((gig, index) => (
+                    <div data-aos="zoom-in" key={index} className="gig-card" style={{ border: '1px solid #e0e0e0', height: "270px", borderRadius: '8px', padding: '0px', width: 'calc(24% - 5px)', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)', transition: 'transform 0.3s ease-in-out', boxSizing: 'border-box' }}>
+                        <div style={{ width: "100%", height: "190px" }}>
+                            <img style={{ width: "100%", height: "170px", borderRadius: "8px 8px 0px 0px" }} src={`http://localhost:10200/${gig.file}`} alt="gigImage" />
+                        </div>
+                        <div style={{ margin: "0px 10px 10px 10px" }}>
+                            <h5 style={{ textAlign: "center" }}><Link style={{ textDecoration: "none", color: "black" }} to={`/workers/checkprofile/${gig.accId}`}>{gig.title}</Link></h5>
+                            <p style={{ textAlign: "center", marginBottom: "25px", color: "#67ba6a" }}><b>Price : {gig.price}</b></p>
+                        </div>
+                    </div>
+                ))}
             </div>
-        ))}
-    </div>
 </div>
     )
 }

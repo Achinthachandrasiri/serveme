@@ -22,6 +22,11 @@ import SlideShow from './component/SlideShow';
 import HomeTextFeild from './component/HomeTextFeild';
 import Banner from './component/Banner';
 import AddReview from './component/AddReview';
+import ProfileUserView from './component/ProfileUserView';
+import GigListUserView from './component/GigListUserView';
+import MyRequestLink from './component/MyRequestLink';
+import ViewGigDetails from './component/ViewGigDetails';
+
 const RegisterWithHeader = () => (
   <div>
     <Header />
@@ -47,6 +52,7 @@ const ViewNewGig = () => (
 const ProfileDiv = () => (
   <div>
     <Header />
+    <MyRequestLink/>
     <CreateGigButton/>
     <Profile/>
     <Gig/>
@@ -78,11 +84,27 @@ const ViewNewReq= ()=>(
   <div>
      <Header />
      <CreateGigButton/>
+     <MyRequestLink/>
      <Profile/>
      <Gig/>
      <ViewRequest/>
   </div>
 )
+const UserView= ()=>(
+  <div>
+     <Header />
+     <ProfileUserView/>
+     <GigListUserView/>
+     <Review/>
+  </div>
+)
+const UserViewNewGig = () => (
+  <div>
+    <Header />
+    <ViewGigDetails/>
+    <Review/>
+  </div>
+);
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
@@ -94,8 +116,9 @@ root.render(
           <Route path='/register' element={<RegisterWithHeader/>}/>
           <Route path="/" element={<App />} />
           <Route path="/profile" element={<ProfileDiv/>}/>
-          <Route path="workers/checkprofile/:id" element={<ProfileDiv/>}/>
+          <Route path="workers/checkprofile/:id" element={<UserView/>}/>
           <Route path="/workers/viewgig/:id" element={< ViewNewGig/>}/>
+          <Route path="/workers/viewgigAsUser/:id" element={<UserViewNewGig/>}/>
           <Route path="/login" element={<Home/>}/>
           <Route path="/workers/editprofile/:id" element={<EditProfilePage/>}/>
           <Route path="/EditGig/:id" element={<EditGigPage/>}/>

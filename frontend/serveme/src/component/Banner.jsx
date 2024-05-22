@@ -25,7 +25,7 @@ function Banner() {
         return () => clearInterval(interval);
     }, [images.length]);
     return (
-        <div>
+        <div  className="mb-3 container">
             <div className="mb-3 container" style={{display:"flex", marginTop:"40px"}}>
             <div  style={{width:"50%", }} >
                 <img style={{ width: "100%", borderRadius: "6px",transition: 'opacity 1s ease-in-out' }} src={images[currentImageIndex]} alt="banner" />

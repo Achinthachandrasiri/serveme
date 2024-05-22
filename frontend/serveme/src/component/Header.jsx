@@ -20,23 +20,12 @@ function Header({profileId}){
         <li className="nav-item">
           <Link className="nav-link" to={"/profile"}>Profile</Link>
         </li>
-        <li className="nav-item">
-          <a className="nav-link" href="#">Features</a>
-        </li>
-        <li className="nav-item">
-          <a className="nav-link" href="#">Pricing</a>
-        </li>
-        <li className="nav-item">
-          <a className="nav-link ">About us</a>
-        </li>
+        
         <li className="nav-item">
           <a className="nav-link" href="#">Service</a>
         </li>
         <li className="nav-item">
           <a className="nav-link" href="#">Help</a></li>
-        <li className="nav-item">
-            <Link to={`/newRequest/${profileId}`} className="nav-link"><img style={{width:"17px", height:"17px", marginLeft:"3px" , marginRight:"4px",marginBottom:"3px"}} src={Notify} alt="notification"/>Check My Request</Link>
-        </li>
         <li className="nav-item">
           <a className="nav-link" href="/"><button style={{backgroundColor:"#67ba6a", padding:"6px 13px 6px 13px ", fontWeight:"bold", border:"#67ba6a", outline:"none", position:"absolute",right:"20px",top:"14px",width:"100px"}} type="submit" class="btn btn-primary">Login</button></a>
         </li>
