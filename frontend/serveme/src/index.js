@@ -1,6 +1,6 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import { BrowserRouter as Router, Route,Routes, Switch } from 'react-router-dom';
+import ReactDOM from 'react-dom/client';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
@@ -19,7 +19,6 @@ import EditGig from './component/EditGig';
 import ViewRequest from './component/ViewRequest';
 import Footer from './component/Footer';
 import SlideShow from './component/SlideShow';
-import HomeTextFeild from './component/HomeTextFeild';
 import Banner from './component/Banner';
 import AddReview from './component/AddReview';
 import ProfileUserView from './component/ProfileUserView';
@@ -28,6 +27,7 @@ import MyRequestLink from './component/MyRequestLink';
 import ViewGigDetails from './component/ViewGigDetails';
 import ForgetPassword from './component/ForgetPassword';
 
+// Component Definitions
 const RegisterWithHeader = () => (
   <div>
     <Header />
@@ -35,12 +35,14 @@ const RegisterWithHeader = () => (
     <Footer/>
   </div>
 );
+
 const CreateNewGig = () => (
   <div>
     <Header />
     <CreateGig/>
   </div>
 );
+
 const ViewNewGig = () => (
   <div>
     <Header />
@@ -50,6 +52,7 @@ const ViewNewGig = () => (
     <Review/>
   </div>
 );
+
 const ProfileDiv = () => (
   <div>
     <Header />
@@ -60,7 +63,8 @@ const ProfileDiv = () => (
     <Review/>
   </div>
 );
-const Menu = () =>(
+
+const Menu = () => (
   <div>
     <Header />
     <Home/>
@@ -69,32 +73,37 @@ const Menu = () =>(
     <Footer/>
   </div>
 );
-const EditProfilePage = () =>(
+
+const EditProfilePage = () => (
   <div>
     <Header />
     <EditProfile/>
   </div>
 );
-const EditGigPage= ()=>(
+
+const EditGigPage = () => (
   <div>
     <Header/>
     <EditGig/>
   </div>
-)
-const ViewNewReq= ()=>(
+);
+
+const ViewNewReq = () => (
   <div>
-     <Header />
-     <ViewRequest/>
+    <Header />
+    <ViewRequest/>
   </div>
-)
-const UserView= ()=>(
+);
+
+const UserView = () => (
   <div>
-     <Header />
-     <ProfileUserView/>
-     <GigListUserView/>
-     <Review/>
+    <Header />
+    <ProfileUserView/>
+    <GigListUserView/>
+    <Review/>
   </div>
-)
+);
+
 const UserViewNewGig = () => (
   <div>
     <Header />
@@ -109,33 +118,31 @@ const ReviewsFromMobile = () => (
     <Review/>
   </div>
 );
+
+// Root Render
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-   <Router basename="/serveme">
-    <Router>
-        <Routes>
-          <Route path="/" element={<Login />} />
-          <Route path="/home" element={<Menu/>} />
-          <Route path="/creategig/:id" element={<CreateNewGig/>} />
-          <Route path='/register' element={<RegisterWithHeader/>}/>
-          <Route path="/" element={<App />} />
-          <Route path="/profile" element={<ProfileDiv/>}/>
-          <Route path="workers/checkprofile/:id" element={<UserView/>}/>
-          <Route path="/workers/viewgig/:id" element={< ViewNewGig/>}/>
-          <Route path="/workers/viewgigAsUser/:id" element={<UserViewNewGig/>}/>
-          <Route path="/login" element={<Home/>}/>
-          <Route path="/workers/editprofile/:id" element={<EditProfilePage/>}/>
-          <Route path="/EditGig/:id" element={<EditGigPage/>}/>
-          <Route path="/newRequest/:id" element={<ViewNewReq/>}/>
-          <Route path="/addreview/" element={<AddReview/>}/>
-          <Route path="/resetPassword" element={<ForgetPassword/>}/>
-          
-          <Route path="/reviewsFromMoile/" element={<ReviewsFromMobile/>}/>
-        </Routes>
+    <Router basename="/serveme">
+      <Routes>
+        <Route path="/" element={<Login />} />
+        <Route path="/home" element={<Menu />} />
+        <Route path="/creategig/:id" element={<CreateNewGig />} />
+        <Route path='/register' element={<RegisterWithHeader />} />
+        <Route path="/profile" element={<ProfileDiv />} />
+        <Route path="workers/checkprofile/:id" element={<UserView />} />
+        <Route path="/workers/viewgig/:id" element={<ViewNewGig />} />
+        <Route path="/workers/viewgigAsUser/:id" element={<UserViewNewGig />} />
+        <Route path="/login" element={<Home />} />
+        <Route path="/workers/editprofile/:id" element={<EditProfilePage />} />
+        <Route path="/EditGig/:id" element={<EditGigPage />} />
+        <Route path="/newRequest/:id" element={<ViewNewReq />} />
+        <Route path="/addreview/" element={<AddReview />} />
+        <Route path="/resetPassword" element={<ForgetPassword />} />
+        <Route path="/reviewsFromMobile/" element={<ReviewsFromMobile />} />
+      </Routes>
     </Router>
   </React.StrictMode>
-  
 );
 
 reportWebVitals();

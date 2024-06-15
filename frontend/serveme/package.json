@@ -22,7 +22,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "homepage": "https://achinthachandrasiri.github.io/serveme"
+    "homepage": "https://achinthachandrasiri.github.io/serveme",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
