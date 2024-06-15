@@ -26,6 +26,7 @@ import ProfileUserView from './component/ProfileUserView';
 import GigListUserView from './component/GigListUserView';
 import MyRequestLink from './component/MyRequestLink';
 import ViewGigDetails from './component/ViewGigDetails';
+import ForgetPassword from './component/ForgetPassword';
 
 const RegisterWithHeader = () => (
   <div>
@@ -83,10 +84,6 @@ const EditGigPage= ()=>(
 const ViewNewReq= ()=>(
   <div>
      <Header />
-     <CreateGigButton/>
-     <MyRequestLink/>
-     <Profile/>
-     <Gig/>
      <ViewRequest/>
   </div>
 )
@@ -102,6 +99,13 @@ const UserViewNewGig = () => (
   <div>
     <Header />
     <ViewGigDetails/>
+    <Review/>
+  </div>
+);
+
+const ReviewsFromMobile = () => (
+  <div>
+    <Header />
     <Review/>
   </div>
 );
@@ -124,13 +128,13 @@ root.render(
           <Route path="/EditGig/:id" element={<EditGigPage/>}/>
           <Route path="/newRequest/:id" element={<ViewNewReq/>}/>
           <Route path="/addreview/" element={<AddReview/>}/>
+          <Route path="/resetPassword" element={<ForgetPassword/>}/>
+          
+          <Route path="/reviewsFromMoile/" element={<ReviewsFromMobile/>}/>
         </Routes>
     </Router>
   </React.StrictMode>
   
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();

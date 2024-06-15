@@ -1,0 +1,35 @@
+.mainReqDiv{
+    background-color:var(--white);
+    width: 80%;
+    margin-left: 2px;
+    min-height: min-content;
+    position: absolute;
+    left: 10%;
+    top: 67px;
+}
+.ReqsubDiv{
+    width: 90%;
+}
+.table{
+    margin-top: 20px;
+    position: absolute;
+    width: 90%;
+    left:5%;
+}
+
+@media (max-width: 480px) {
+    .mainReviewDiv{
+        box-sizing: border-box;
+        margin-top: 20px;
+        width: 100%;
+        top: 30px;
+    }
+    .ReqsubDiv{
+        background-color:#fff;
+        position:relative;
+        top: 20px;
+        height: auto;
+        width: 90%;
+        left: 5%;
+    }
+}

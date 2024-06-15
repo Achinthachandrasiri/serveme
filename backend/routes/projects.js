@@ -43,4 +43,20 @@ router.route('/request/:id').get((req, res) => {
             res.status(500).json({ error: "Error fetching projects" });
         });
 });
+
+//delete project
+router.delete('/request/delete/:id', (req, res) => {
+    const id = req.params.id.trim();
+    projects.findByIdAndDelete(id)
+      .then(user => {
+        if (!user) {
+          return res.status(404).json({ message: 'Project not found' });
+        }
+        res.json({ message: 'Project deleted successfully', user });
+      })
+      .catch(error => {
+        console.error("Error deleting data:", error);
+        res.status(500).json("Internal server error");
+      });
+  });
 module.exports =router;

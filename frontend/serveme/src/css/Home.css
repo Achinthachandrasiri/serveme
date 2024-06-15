@@ -1,0 +1,119 @@
+:root {
+    --green: #67ba6a;
+    --gray: gray;
+    --red: #f64e4e;
+    --bgwhite: #f8f9fa
+}
+.homeSubDiv{
+    display: flex;
+}
+.inputFeild{
+    width: 20%;
+}
+.searchResult{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: space-between;
+    margin-top: 20px;
+    padding:0;
+    margin: 0;
+}
+.box {
+    padding:0;
+    margin: 12px;
+    border: 1px solid #e0e0e0;
+    height: 270px;
+    border-radius: 8px;
+    padding: 0px;
+    width: calc(25% - 5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    box-sizing: border-box;
+}
+.bannerDiv{
+    display: flex;
+    margin-top: 40px;
+}
+.parts{
+    width: 50%;
+}
+.heading{
+    color: #67ba6a;
+}
+.readMore{
+    padding: 5px 10px;
+    border: solid 1px gray;
+    border-radius: 3px;
+    width: 150px;
+}
+.link-img{
+    width: 34px;
+    height: 27px;
+    padding-left: 10px;
+    margin-bottom: 2px;
+}
+.secondMainDiv{
+    margin-top: 60px;
+}
+.secondHeading{
+    text-align: center;
+    margin-bottom: 40px;
+}
+@media (max-width: 480px) {
+    .homeSubDiv{
+        display:block;
+    }
+    .inputFeild{
+        width: 100%;
+    }
+    .searchResult{
+        display:block;
+    }
+    .box {
+        border: 1px solid #e0e0e0;
+        height: 270px;
+        border-radius: 8px;
+        padding: 0px;
+        width: 100%;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease-in-out;
+        box-sizing: border-box;
+    }
+    .bannerDiv{
+        display:block;
+        margin-top: 20px;
+    }
+    .parts{
+        width: 100%;
+    }
+    .heading{
+        color: #67ba6a;
+    }
+    .parts p{
+        text-align: center;
+        margin-top: 20px;
+        margin-bottom: 0;
+    }
+    .readMore{
+        padding: 5px 10px;
+        border: solid 1px gray;
+        border-radius: 3px;
+        width:100%;
+        text-align: center;
+        margin-top: 20px;
+    }
+    .link-img{
+        width: 34px;
+        height: 27px;
+        padding-left: 10px;
+        margin-bottom: 2px;
+    }
+    .secondMainDiv{
+        margin-top: 20px;
+    }
+    .secondHeading{
+        text-align:left;
+    }
+      
+}

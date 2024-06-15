@@ -1,0 +1,130 @@
+:root {
+    --green: #67ba6a;
+    --gray: gray;
+    --red: #f64e4e;
+    --bgwhite: #f8f9fa;
+    --white:#fff;
+    --black:black;
+}
+.loginMainDiv{
+    display: flex;
+    justify-content: space-around;
+}
+.imgDiv{
+    position: absolute;
+    width: 50%;
+    left: 25%;
+    top: 19%;
+}
+.Img{
+    width: 50%;
+    height: 80%;
+}
+.contain{
+    position: absolute;
+    top: 20%;
+    width: 50%;
+    left: 51%;
+}
+.inputDiv{
+    width: 50%;
+    margin-top:20px;
+}
+.inputDivLink{
+    margin-top: 10px;
+   display: flex;
+}
+.btnSubmit{
+    margin-top: 5px;
+    width: 50%;
+    background-color:var(--green);
+    border: solid 2px var(--green);
+    outline: none;
+    font-weight: bold;
+}
+.btn-submit-google{
+    margin-top: 20px;
+    width: 50%;
+    background-color:var(--bgwhite);
+    border: solid 1px lightgray;
+    outline: none;
+    color: gray;
+    font-weight: bold;
+}
+.btn-submit-google:hover {
+    background-color:var(--bgwhite);
+    border: solid 1px lightgray;
+    color: var(--gray);
+}
+.btnSubmit:hover {
+    background-color:var(--green);
+    border: solid 2px var(--green);
+}
+.btn-img{
+    width: 25px;
+    height: 25px;
+    margin-right: 5px;
+}
+@media (max-width: 480px) {
+    .loginMainDiv{
+        display:block;
+        justify-content: space-around;
+    }
+    .imgDiv{
+        display:block;
+        position: absolute;
+        width:50%;
+        left:25%;
+        top: 5%;
+    }
+    .Img{
+        width: 100%;
+        height: 20%;
+    }
+    .contain{
+        position: absolute;
+        top: 30%;
+        width: 80%;
+        left:10%;
+    }
+    h1{
+    text-align: center;
+    }
+    .inputDiv{
+        width: 100%;
+        display:block;
+    }
+    .forget{
+        text-align: center;
+    }
+    .inputDivLink{
+        margin-top:20px;
+        text-align: center;
+        width: 100%;
+        display:block;
+    }
+    .inputDiv p{
+      text-align: center;
+    }
+    .getText{
+        width: 100%;
+    }
+    .btnSubmit{
+        margin-top: 5px;
+        width: 100%;
+        background-color:var(--green);
+        border: solid 2px var(--green);
+        outline: none;
+        font-weight: bold;
+    }
+    .btn-submit-google{
+        margin-top: 10px;
+        width: 100%;
+        background-color:var(--bgwhite);
+        border: solid 1px lightgray;
+        outline: none;
+        color: gray;
+        font-weight: bold;
+    }
+
+}

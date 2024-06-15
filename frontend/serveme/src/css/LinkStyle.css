@@ -1,0 +1,13 @@
+.linkMainDiv{
+    display: block;
+    position: absolute;
+    top: 22px;
+    left: 23%;
+}
+.linkImg{
+    width: 17px;
+    height: 17px;
+    margin-left: 3px;
+    margin-right: 4px;
+    margin-bottom: 3px;
+  }

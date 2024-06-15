@@ -1,17 +1,18 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
+import RequestCss from '../css/Request.css';
 
-function ViewRequest({ profileId }) {
+function ViewRequest() {
     // Getting profile data
+    const { id } = useParams();
     const [profiles, setProfile] = useState([]);
-    const navigate = useNavigate();
 
     useEffect(() => {
         async function getReq() {
-            if (profileId) {
+            if (id) {
                 try {
-                    const response = await axios.get(`http://localhost:10200/projects/request/${profileId}`);
+                    const response = await axios.get(`http://localhost:10200/projects/request/${id}`);
                     if (Array.isArray(response.data) && response.data.length > 0) {
                         setProfile(response.data);
                     } else {
@@ -23,30 +24,60 @@ function ViewRequest({ profileId }) {
             }
         }
         getReq();
-    }, [profileId]);
+    }, [id]);
+
+    // Deleting project request
+    const onDelete = async (id) => {
+        try {
+            await axios.delete(`http://localhost:10200/projects/request/delete/${id}`);
+            setProfile(profiles.filter(profile => profile._id !== id));
+            alert("Deleted Request");
+        } catch (error) {
+            alert('Error deleting project');
+        }
+    }
 
     return (
-        <div style={{width: "33%", minHeight: "100vh",borderLeft:"solid 0.5px lightGray", padding:"0px 14px 14px",paddingTop:"15px", position:"absolute", right:"0",top:"66px"}}>
-            <div style={{backgroundColor:"#fff"}} >
-                {profiles.map((profile, index) => (
-                    <div key={index} className="gig-card" style={{ padding:"25px",backgroundColor:"#f8f9fa",  minHeight: "min-content",  border: '0px solid #e0e0e0', borderRadius: '4px', padding: '00px', width: 'calc(100% - 5px)', boxShadow: '0 3px 5px rgba(0, 0, 0, 0.1)', transition: 'transform 0.3s ease-in-out', boxSizing: 'border-box', }}>
-                        <div style={{ display: "flex",padding:"15px", marginBottom:"20px"}}>
-                            <div style={{ marginTop: "5px",width:"100%" }}>
-                                <p style={{ marginBottom: "5px" }}><b>Location  :</b> {profile.location}</p>
-                                <p style={{ marginBottom: "5px" }}><b>Task  :</b> {profile.task}</p>
-                                <p style={{ marginBottom: "5px" }}><b>Start Date:</b> {profile.startDate}</p>
-                                <p style={{ marginBottom: "5px" }}><b>Time  :</b> {profile.time}</p>
-                                <p style={{ marginBottom: "5px" }}><b>Budget  :</b> {profile.budget}</p>
-                                <p style={{ marginBottom: "5px" }}><b>Contact  :</b> {profile.contact}</p>
-                                <div style={{ marginTop: "10px" }}>
-                                    <button style={{ backgroundColor: "#67ba6a", border: "#67ba6a", outline: "none", width: "100%", textAlign: "center", padding: "10px", fontWeight: "bold", borderRadius: "4px", color: "white" }} ><b>Accept Request</b></button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                ))}
+        <div className="mainReqDiv">
+            <div className="ReqsubDiv">
+                <div className="table-responsive">
+                    <table className="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Task</th>
+                                <th scope="col">Location</th>
+                                <th scope="col">Mobile</th>
+                                <th scope="col">When</th>
+                                <th scope="col">Requirment</th>
+                                <th scope="col"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {profiles.map((profile, index) => (
+                                <tr key={profile._id}>
+                                    <th scope="row">{index + 1}</th>
+                                    <td>{profile.task}</td>
+                                    <td>{profile.location}</td>
+                                    <td>{profile.contact}</td>
+                                    <td>{profile.startDate}</td>
+                                    <td>{profile.budget}</td>
+                                    <td>
+                                        <a href={`tel:${profile.contact}`}>
+                                            <button className="btn btn-success mr-2" style={{width:"90px", marginRight: "5px", border: "solid 1px #67ba6a ", fontWeight: "bold", background: "#67ba6a" }}>
+                                                Call me
+                                            </button>
+                                        </a>
+                                        <button className="btn btn-dark" style={{fontWeight:"bold",width:"90px"}} onClick={() => onDelete(profile._id)}>Delete</button>
+                                    </td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
-    )
+    );
 }
+
 export default ViewRequest;
