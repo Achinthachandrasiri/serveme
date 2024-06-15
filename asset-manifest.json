@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.7b653e72.css",
-    "main.js": "/static/js/main.e529b02b.js",
+    "main.css": "/static/css/main.8188cd60.css",
+    "main.js": "/static/js/main.8f48f38a.js",
     "static/js/453.fc701688.chunk.js": "/static/js/453.fc701688.chunk.js",
     "static/media/jimmy-nilsson-masth-UovTD1dG-lA-unsplash.jpg": "/static/media/jimmy-nilsson-masth-UovTD1dG-lA-unsplash.274a7ab0a20906ab4fb5.jpg",
     "static/media/Electrician-Featured.jpg": "/static/media/Electrician-Featured.6d13adec8b0f488a055a.jpg",
@@ -11,25 +11,25 @@
     "static/media/Google-Icon-PNG.png": "/static/media/Google-Icon-PNG.95c97fae6db6c4dd1800.png",
     "static/media/welder.jpg": "/static/media/welder.4cde0195c477de4bbc7f.jpg",
     "static/media/solar-panel-contractor-quotes-installation-1024x683.jpg": "/static/media/solar-panel-contractor-quotes-installation-1024x683.de5af6e419190ca09a1b.jpg",
+    "static/media/call.png": "/static/media/call.85641426eb758c73eed8.png",
     "static/media/cancel.png": "/static/media/cancel.81e2a42bd6accde29c52.png",
-    "static/media/location.png": "/static/media/location.084da7f156b6c3f45476.png",
+    "static/media/location (1).png": "/static/media/location (1).81e2cece6466774e170f.png",
     "static/media/notification.png": "/static/media/notification.ab4c65e992040c8e0723.png",
     "static/media/bb.png": "/static/media/bb.04f61eae724dca43c1bf.png",
     "static/media/revicons.eot": "/static/media/revicons.a77de540a38981833f9e.eot",
     "static/media/revicons.ttf": "/static/media/revicons.57fd05d4ae650374c8de.ttf",
-    "static/media/date-of-birth.png": "/static/media/date-of-birth.1d47094b2cf697bbaf42.png",
     "static/media/point.png": "/static/media/point.23ab837908bd4dfbd66f.png",
     "static/media/menu.png": "/static/media/menu.883aa3234fe3564661d1.png",
-    "static/media/email.png": "/static/media/email.51b08bcbb5af7a861c31.png",
+    "static/media/cake.png": "/static/media/cake.3b05c1ed8d6ba263effd.png",
     "static/media/revicons.woff": "/static/media/revicons.e8746a624ed098489406.woff",
     "static/media/logo.svg": "/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/index.html",
-    "main.7b653e72.css.map": "/static/css/main.7b653e72.css.map",
-    "main.e529b02b.js.map": "/static/js/main.e529b02b.js.map",
+    "main.8188cd60.css.map": "/static/css/main.8188cd60.css.map",
+    "main.8f48f38a.js.map": "/static/js/main.8f48f38a.js.map",
     "453.fc701688.chunk.js.map": "/static/js/453.fc701688.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.7b653e72.css",
-    "static/js/main.e529b02b.js"
+    "static/css/main.8188cd60.css",
+    "static/js/main.8f48f38a.js"
   ]
 }
